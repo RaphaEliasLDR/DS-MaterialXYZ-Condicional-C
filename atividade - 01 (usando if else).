@@ -1,4 +1,3 @@
-#include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
@@ -27,15 +26,19 @@ printf (" ");
 
 if (pergunta1 == "não") {
      printf("Material: X ");
- } else if(strcmp(pergunta1, "sim")==0 && strcmp(pergunta2, "sim")==0 && strcmp(pergunta3, "sim")==0) {
+ } else if(strcmp(pergunta1, "sim") == 0 && strcmp(pergunta2, "sim") == 0 && strcmp(pergunta3, "sim") ==0) {
   printf("\nMateriail: Y ");
- } else if(strcmp(pergunta1, "sim")==0 && strcmp(pergunta2, "sim")==0 && strcmp(pergunta3, "nao")==0) {
+ } else if(strcmp(pergunta1, "sim") == 0 && strcmp(pergunta2, "sim") ==0 && strcmp(pergunta3, "nao") == 0) {
   printf("\nMateriail: Z ");
- } else if(strcmp(pergunta1, "sim")==0 && strcmp(pergunta2, "nao")==0 && strcmp(pergunta3, "sim")==0) {
+ } else if(strcmp(pergunta1, "sim") == 0 && strcmp(pergunta2, "nao") == 0 && strcmp(pergunta3, "sim") == 0) {
    printf("\nMateriail: X ");
-} else if(strcmp(pergunta1, "sim")==0 && strcmp(pergunta2, "nao")==0 && strcmp(pergunta3, "nao")==0) {
+} else if(strcmp(pergunta1, "sim") == 0 && strcmp(pergunta2, "nao") == 0 && strcmp(pergunta3, "nao") == 0) {
    printf("\nMateriail: X ");
 }
+
+
+
+
 
 return 0;
 }
