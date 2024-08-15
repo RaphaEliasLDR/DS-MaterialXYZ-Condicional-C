@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <locale.h>
+
+#define TAM 3
+
+
+int main(){
+
+setlocale (LC_ALL,"portuguese");
+
+char material [50];
+float preco[TAM], consumoUnid[TAM], valorConsumoAnual[TAM];
+int i, j;
+
+for (i = 0; i <= TAM; i++){
+
+printf ("Informe o nome do material: ");
+fgets (material, TAM, stdin);
+fflush(stdin);
+
+printf ("\nInforme o preço: ");
+scanf ("%f", &preco[i]);
+
+printf ("\nInforme o consumo anual unidade: ");
+scanf ("%f", &consumoUnid[i]);
+
+}
+
+
+valorConsumoAnual[i] = preco[i] * consumoUnid[i];
+
+
+
+printf ("Material: %c", material);
+printf ("Valor do consumo anual: %.2f", valorConsumoAnual);
+
+
+
+return 0;
+}
+
