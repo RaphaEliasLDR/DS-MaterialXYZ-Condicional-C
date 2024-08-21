@@ -1,0 +1,39 @@
+ 
+	public static void main(String[] args) {
+	double loteEconomicoDeCompras;	
+		
+		
+        // Recebendo informações fornecidas pelo usuario;
+	
+		java.util.Scanner scanner = new java.util.Scanner(System.in);
+		
+		System.out.println ("Insira o consumo anual em quantidade (CA): ");
+		double consumoAnualQ = scanner.nextDouble();
+		System.out.println ("Insira o custo do pedido de compra (CC): ");
+		double custoDoPedidoC = scanner.nextDouble();
+		System.out.println ("Insira o custo do material armazenado (CPA): ");
+		double custoDoMaterialA = scanner.nextDouble();
+		System.out.println ("Insira o preço unitário (PU): ");
+		double precoUnitario = scanner.nextDouble();
+		
+		
+		// Math.sqrt esta sendo utilizado para calcular a raiz quadrada. (precisa do import "java.lang.Math")
+		
+		loteEconomicoDeCompras = ((2 * consumoAnualQ * custoDoPedidoC)/(custoDoMaterialA * precoUnitario));
+		loteEconomicoDeCompras = Math.sqrt(loteEconomicoDeCompras);
+
+		
+		// Imprimindo informações do LEC (Lote economico de compras) para o usuario;
+		
+		System.out.println (String.format("Lote econominco de comrpas (LEC): %.2f",loteEconomicoDeCompras));
+		
+		double A1 = 100;
+		double A2 = loteEconomicoDeCompras;
+		double A3 = 1000;
+		
+		double B3 = consumoAnualQ / 
+		
+		
+ scanner.close();
+	}
+
