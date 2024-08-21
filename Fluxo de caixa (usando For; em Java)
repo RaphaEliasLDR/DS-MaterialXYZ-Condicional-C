@@ -14,9 +14,9 @@ public static void main(String[] args) {
 	     double[] totalDeSaidasPrevisto = new double [100];
 	     double[] totalDeSaidasRealizado = new double [100];
 	     
-	     
 	     int i, j, m;
-	     
+
+
 		java.util.Scanner scanner = new java.util.Scanner(System.in);
 		
 		System.out.println ("Insira a quantidade de mêses: ");
