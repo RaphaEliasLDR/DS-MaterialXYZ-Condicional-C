@@ -1,0 +1,88 @@
+public static void main(String[] args) {
+		 double[] entradasPrevistas1 = new double[100];
+		 double[] entradasPrevistas2 = new double[100];
+	     double[] entradasRealizadas1 = new double[100];
+	     double[] entradasRealizadas2 = new double[100];
+	     double[] resultadoPrevisto = new double [100];
+	     double[] resultadoRealizado = new double [100];
+	     double[] fornecedorPrevisto = new double [100];
+	     double[] fornecedorRealizado = new double [100];
+	     double[] fPagamentoPrevisto = new double [100];
+	     double[] fPagamentoRealizado = new double [100];
+	     double[] aluguelPrevisto = new double [100];
+	     double[] aluguelRealizado = new double [100];
+	     double[] totalDeSaidasPrevisto = new double [100];
+	     double[] totalDeSaidasRealizado = new double [100];
+	     
+	     
+	     int i, j, m;
+	     
+		java.util.Scanner scanner = new java.util.Scanner(System.in);
+		
+		System.out.println ("Insira a quantidade de mêses: ");
+		int numMes = scanner.nextInt();
+		
+		for (i = 0; i < numMes; i++) {
+			
+            System.out.println("Insira o valor da entrada prevista (Recebida 1) do " + (i + 1) + "º mês:");
+            entradasPrevistas1[i] = scanner.nextDouble();
+            System.out.println("Insira o valor da entrada prevista (Recebida 2) do " + (i + 1) + "º mês:");
+            entradasPrevistas2[i] = scanner.nextDouble();
+            
+            resultadoPrevisto[i] = entradasPrevistas1[i] + entradasPrevistas2[i];
+	}
+		
+		for (j = 0; j < numMes; j++) {
+			
+			System.out.println("Insira o valor da entrada realizada (Recebida 1) do " + (j + 1) + "º mês:");
+            entradasRealizadas1[j] = scanner.nextDouble();
+            System.out.println("Insira o valor da entrada realizada (Recebida 2) do " + (j + 1) + "º mês:");
+            entradasRealizadas2[j] = scanner.nextDouble();
+            
+            resultadoRealizado[j] = entradasRealizadas1[j] + entradasRealizadas2[j];
+            
+		}
+        
+	
+		//Calculando saídas:
+		
+		for (m = 0; m < numMes; m++) {
+		System.out.println("Insira o valor do fornecedor do" + (m + 1)+ "º mês: ");
+        fornecedorPrevisto[m] = scanner.nextDouble();
+        System.out.println ("Insira o valor da folha de pagamento do" + (m + 1)+ "º mês: ");
+        fPagamentoPrevisto[m] = scanner.nextDouble();
+        System.out.println ("Insira o valor do aluguel do" + (m + 1)+ "º mês: ");
+        aluguelPrevisto[m] = scanner.nextDouble();
+        System.out.println("Insira o valor do fornecedor do" + (m + 1)+ "º mês: ");
+        fornecedorRealizado[m] = scanner.nextDouble();
+        System.out.println ("Insira o valor da folha de pagamento do" + (m + 1)+ "º mês: ");
+        fPagamentoRealizado[m] = scanner.nextDouble();
+        System.out.println ("Insira o valor do aluguel do" + (m + 1)+ "º mês: ");
+        aluguelRealizado[m] = scanner.nextDouble();
+		
+        totalDeSaidasPrevisto[m] = fornecedorPrevisto[m] + fPagamentoPrevisto[m] + aluguelPrevisto[m];
+        totalDeSaidasRealizado[m] = fornecedorRealizado[m] + fPagamentoRealizado[m] + aluguelRealizado[m];
+		}
+	
+	//Imprimindo resultados:
+	
+	
+	for (i = 0; i < numMes; i++) {
+		System.out.println ("Resultado total Previsto do " + (i + 1) + "º mês: " + resultadoPrevisto[i]);
+		
+	}
+	
+	for (j = 0; j < numMes; j++) {
+		System.out.println ("Resultado total Realizado do " + (j + 1) + "º mês: " + resultadoRealizado[j]);
+	}
+	
+	for (m = 0; m < numMes; m++) {
+		System.out.println ("Total de Saídas previsto do " + (m + 1) + "º mês: " + totalDeSaidasPrevisto[m]);
+		System.out.println ("Total de Saídas Realizado do " + (m + 1) + "º mês: " + totalDeSaidasRealizado[m]);
+	}
+	
+	
+	
+	
+	scanner.close();
+	}
