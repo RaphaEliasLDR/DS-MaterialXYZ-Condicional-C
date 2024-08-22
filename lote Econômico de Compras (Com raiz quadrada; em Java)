@@ -1,39 +1,104 @@
- 
-	public static void main(String[] args) {
-	double loteEconomicoDeCompras;	
-		
-		
-        // Recebendo informações fornecidas pelo usuario;
-	
-		java.util.Scanner scanner = new java.util.Scanner(System.in);
-		
-		System.out.println ("Insira o consumo anual em quantidade (CA): ");
-		double consumoAnualQ = scanner.nextDouble();
-		System.out.println ("Insira o custo do pedido de compra (CC): ");
-		double custoDoPedidoC = scanner.nextDouble();
-		System.out.println ("Insira o custo do material armazenado (CPA): ");
-		double custoDoMaterialA = scanner.nextDouble();
-		System.out.println ("Insira o preço unitário (PU): ");
-		double precoUnitario = scanner.nextDouble();
-		
-		
-		// Math.sqrt esta sendo utilizado para calcular a raiz quadrada. (precisa do import "java.lang.Math")
-		
-		loteEconomicoDeCompras = ((2 * consumoAnualQ * custoDoPedidoC)/(custoDoMaterialA * precoUnitario));
-		loteEconomicoDeCompras = Math.sqrt(loteEconomicoDeCompras);
 
+
+
+                public static void main(String[] args) {
+		double loteEconomicoDeCompras;	
+			
+			
+	        // Recebendo informações forneidas pelo usuario;
 		
-		// Imprimindo informações do LEC (Lote economico de compras) para o usuario;
-		
-		System.out.println (String.format("Lote econominco de comrpas (LEC): %.2f",loteEconomicoDeCompras));
-		
-		double A1 = 100;
-		double A2 = loteEconomicoDeCompras;
-		double A3 = 1000;
-		
-		double B3 = consumoAnualQ / 
-		
-		
- scanner.close();
-	}
+			java.util.Scanner scanner = new java.util.Scanner(System.in);
+			
+			System.out.println ("Insira o consumo anual em quantidade (CA): ");
+			double consumoAnualQ = scanner.nextDouble();
+			System.out.println ("Insira o custo do pedido de compra (CC): ");
+			double custoDoPedidoC = scanner.nextDouble();
+			System.out.println ("Insira o custo do material armazenado (CPA): ");
+			double custoDoMaterialA = scanner.nextDouble();
+			System.out.println ("Insira o preço unitário (PU): ");
+			double precoUnitario = scanner.nextDouble();
+			
+			
+			// Math.sqrt esta sendo utilizado para calcular a raiz quadrada.
+			
+			loteEconomicoDeCompras = ((2 * consumoAnualQ * custoDoPedidoC)/(custoDoMaterialA * precoUnitario));
+			loteEconomicoDeCompras = Math.sqrt(loteEconomicoDeCompras);
+
+			
+			double A1 = 100;
+			double A2 = loteEconomicoDeCompras;
+			double A3 = 1000;
+			
+			
+			//B = nº de pedidos anuais = consumo anual em quant / quant pedida;
+			
+			double B1 = consumoAnualQ / A1;
+			double B2 = consumoAnualQ / A2;
+			double B3 = consumoAnualQ / A3;
+			
+			
+			//C = Estoque médio = quant pedida / 2 * preço unitario;
+			
+			double C1 = A1 / 2 * precoUnitario;
+			double C2 = A2 / 2 * precoUnitario;
+			double C3 = A3 / 2 * precoUnitario;
+			
+			
+			//D = Custo de posse = custo do material armazenado * estoque médio;
+			
+			double D1 = custoDoMaterialA * C1;
+			double D2 = custoDoMaterialA * C2;
+			double D3 = custoDoMaterialA * C3;
+			
+			
+			//E = Custo do pedido = custo do pedido de compra * nº de pedidos anuais;
+			
+			double E1 = custoDoPedidoC * B1;
+			double E2 = custoDoPedidoC * B2;
+			double E3 = custoDoPedidoC * B3;
+			
+			
+			// F = Custo total = Custo de posse + custo do pedido; 
+			
+			double F1 = D1 + E1;
+            double F2 = D2 + E2;
+            double F3 = D3 + E3;
+            
+			
+			// Imprimindo informações do LEC (Lote economico de compras) para o usuario;
+            
+        	System.out.println ("............................................................");
+			System.out.println (String.format("Lote econominco de comrpas (LEC): %.2f",loteEconomicoDeCompras));
+			
+			System.out.println ("............................................................");
+			System.out.println (String.format ("nº de pedidos anuais (B 1): %.2f", B1));
+			System.out.println (String.format ("nº de pedidos anuais (B 2): %.2f", B2));
+			System.out.println (String.format ("nº de pedidos anuais (B 3): %.2f", B3));
+			
+			System.out.println ("............................................................");
+			System.out.println (String.format ("Estoque médio (C 1): %.2f", C1));
+			System.out.println (String.format ("Estoque médio (C 2): %.2f", C2));
+			System.out.println (String.format ("Estoque médio (C 3): %.2f", C3));
+			
+			System.out.println ("............................................................");
+			System.out.println (String.format ("Custo de posse (D 1): %.2f", D1));
+			System.out.println (String.format ("Custo de posse (D 2): %.2f", D2));
+			System.out.println (String.format ("Custo de posse (D 3): %.2f", D3));
+			
+			System.out.println ("............................................................");
+			System.out.println (String.format ("Custo do pedido (E 1): %.2f", E1));
+			System.out.println (String.format ("Custo do pedido (E 2): %.2f", E2));
+			System.out.println (String.format ("Custo do pedido (E 3): %.2f", E3));
+			
+			System.out.println ("............................................................");
+			System.out.println (String.format ("Custo total (F 1): %.2f", F1));
+			System.out.println (String.format ("Custo total (F 2): %.2f", F2));
+			System.out.println (String.format ("Custo total (F 3): %.2f", F3));
+			
+			
+	 scanner.close();
+		}
+
+
+
 
